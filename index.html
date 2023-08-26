@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+    <title>MOONLIGHT</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">User</a>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <img src="sun.png" id="icon">
+    </header>
+    <section>
+        <img src="stars.png" id="stars" alt="">
+        <img src="moon.png" id="moon" alt="">
+        <img src="mountains_behind.png" id="mountains_behind" alt="">
+        <h2 id="text">goodnight</h2>
+        <a href="#sec" id="btn">Explore</a>
+        <img src="mountains_front.png" id="mountains_front" alt="">
+    </section>
+    <div class="sec" id="sec">
+        <h2>Content</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit commodi at ipsum error officia deleniti a quam nam recusandae necessitatibus. Ea sed alias nesciunt facere consectetur. Repellendus harum iusto repellat. Repellat accusamus asperiores placeat odio iusto deserunt ipsa sunt eius ea nobis. Placeat aspernatur maiores illum illo facilis iure corporis.Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, explicabo repellendus odio placeat voluptatum dicta rerum molestiae maiores libero necessitatibus illo, mollitia dolor atque cumque quis facere aliquid expedita dolore. Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique porro commodi temporibus fugiat dignissimos repellat eum sequi praesentium, nesciunt asperiores ipsum officiis quas provident atque quis obcaecati doloribus amet esse!<br><br>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit commodi at ipsum error officia deleniti a quam nam recusandae necessitatibus. Ea sed alias nesciunt facere consectetur. Repellendus harum iusto repellat. Repellat accusamus asperiores placeat odio iusto deserunt ipsa sunt eius ea nobis. Placeat aspernatur maiores illum illo facilis iure corporis.Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, explicabo repellendus odio placeat voluptatum dicta rerum molestiae maiores libero necessitatibus illo, mollitia dolor atque cumque quis facere aliquid expedita dolore. Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique porro commodi temporibus fugiat dignissimos repellat eum sequi praesentium, nesciunt asperiores ipsum officiis quas provident atque quis obcaecati doloribus amet esse!<br><br>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit commodi at ipsum error officia deleniti a quam nam recusandae necessitatibus. Ea sed alias nesciunt facere consectetur. Repellendus harum iusto repellat. Repellat accusamus asperiores placeat odio iusto deserunt ipsa sunt eius ea nobis. Placeat aspernatur maiores illum illo facilis iure corporis.Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, explicabo repellendus odio placeat voluptatum dicta rerum molestiae maiores libero necessitatibus illo, mollitia dolor atque cumque quis facere aliquid expedita dolore. Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique porro commodi temporibus fugiat dignissimos repellat eum sequi praesentium, nesciunt asperiores ipsum officiis quas provident atque quis obcaecati doloribus amet esse!<br><br>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit commodi at ipsum error officia deleniti a quam nam recusandae necessitatibus. Ea sed alias nesciunt facere consectetur. Repellendus harum iusto repellat. Repellat accusamus asperiores placeat odio iusto deserunt ipsa sunt eius ea nobis. Placeat aspernatur maiores illum illo facilis iure corporis.Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, explicabo repellendus odio placeat voluptatum dicta rerum molestiae maiores libero necessitatibus illo, mollitia dolor atque cumque quis facere aliquid expedita dolore. Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique porro commodi temporibus fugiat dignissimos repellat eum sequi praesentium, nesciunt asperiores ipsum officiis quas provident atque quis obcaecati doloribus amet esse!<br><br>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit commodi at ipsum error officia deleniti a quam nam recusandae necessitatibus. Ea sed alias nesciunt facere consectetur. Repellendus harum iusto repellat. Repellat accusamus asperiores placeat odio iusto deserunt ipsa sunt eius ea nobis. Placeat aspernatur maiores illum illo facilis iure corporis.Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, explicabo repellendus odio placeat voluptatum dicta rerum molestiae maiores libero necessitatibus illo, mollitia dolor atque cumque quis facere aliquid expedita dolore. Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique porro commodi temporibus fugiat dignissimos repellat eum sequi praesentium, nesciunt asperiores ipsum officiis quas provident atque quis obcaecati doloribus amet esse!
+        </p>
+    </div>
+    <script>
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon');
+        let mountains_behind = document.getElementById('mountains_behind');
+        let text = document.getElementById('text');
+        let btn = document.getElementById('btn');
+        let mountains_front = document.getElementById('mountains_front');
+        let header = document.querySelector('header');
+        window.addEventListener('scroll',function(){
+            let value = window.scrollY;
+            stars.style.left = value * 0.25 + 'px';
+            moon.style.top = value * 1.05 + 'px';
+            mountains_behind.style.top = value * 0.5 + 'px';
+            mountains_front.style.top = value * 0 + 'px';
+            text.style.marginRight = value * 4 + 'px';
+            text.style.marginTop = value * 1.5 + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            header.style.top = value * 0.5 + 'px';
+        })
+        var icon = document.getElementById("icon");
+        var icon1 = document.getElementById("moon");
+        icon.onclick = function(){
+            document.body.classList.toggle("light-theme");
+            if(document.body.classList.contains("light-theme")){
+                icon.src = "sun.png";
+                text.textContent = "goodmorning."
+            }else{
+                icon1.src = "moon.png"
+                text.textContent = "goodnight."
+            }
+
+        }
+    </script>
+</body>
+</html>
